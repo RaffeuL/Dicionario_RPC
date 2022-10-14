@@ -1,8 +1,8 @@
-from dicio import Dicio
 import xmlrpc.client
-palavra = input('digita uma palavra ai: ')
-with xmlrpc.client.ServerProxy("http://localhost:8000/") as proxy:
+print("Dicionário Português")
+palavra = input('Busque no Dicionário: ')
+with xmlrpc.client.ServerProxy("http://localhost:6565/") as proxy:
     significados = proxy.busca_palavra(palavra)
-    print("Siginificados: ")
+    print("Todos os Siginificados: ")
     for significado in significados:
         print(significado)
